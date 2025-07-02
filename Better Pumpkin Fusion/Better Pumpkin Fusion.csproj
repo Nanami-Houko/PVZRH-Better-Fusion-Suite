@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -12,8 +12,7 @@
 		<AssemblyName>Better_Pumpkin_Fusion</AssemblyName>
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<GamePath>D:\Pvz Alt\PvZ Fusion Translation [Melon Loader 2.5.1 Beta]</GamePath>
-		<Platforms>AnyCPU;x64</Platforms>
+    <GamePath>G:\Fusion 2.6.1</GamePath>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -43,6 +42,9 @@
 		</Reference>
 		<Reference Include="Unity.2D.Animation.Runtime">
 			<HintPath>$(GamePath)\MelonLoader\Il2CppAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.2D.Tilemap.Extras">
+			<HintPath>$(GamePath)\MelonLoader\Il2CppAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Burst">
 			<HintPath>$(GamePath)\MelonLoader\Il2CppAssemblies\Unity.Burst.dll</HintPath>
@@ -130,6 +132,9 @@
 		</Reference>
 		<Reference Include="UnityEngine.HotReloadModule">
 			<HintPath>$(GamePath)\MelonLoader\Il2CppAssemblies\UnityEngine.HotReloadModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.Il2CppAssetBundleManager">
+			<HintPath>$(GamePath)\MelonLoader\Il2CppAssemblies\UnityEngine.Il2CppAssetBundleManager.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ImageConversionModule">
 			<HintPath>$(GamePath)\MelonLoader\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>

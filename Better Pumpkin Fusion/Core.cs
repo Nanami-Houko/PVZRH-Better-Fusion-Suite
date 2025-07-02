@@ -1,130 +1,142 @@
-﻿using Il2Cpp;
+﻿using HarmonyLib;
+using Il2Cpp;
 using MelonLoader;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(Better_Pot_Fusion.Core), "Better Pumpkin Fusion", "231.0.0", "dynaslash, JustNull & Mamoru-kun", null)]
+[assembly: MelonInfo(typeof(Better_Pumpkin_Fusion.Core), "Better Pumpkin Fusion", "231.0.0", "dynaslash, JustNull & Mamoru-kun", null)]
 [assembly: MelonGame("LanPiaoPiao", "PlantsVsZombiesRH")]
 
-namespace Better_Pot_Fusion
+namespace Better_Pumpkin_Fusion
 {
     public class Core : MelonMod
     {
-        private Dictionary<int, int> plantMixDictionary = new Dictionary<int, int>
+        private static Dictionary<PlantType, PlantType> plantMixDictionary = new Dictionary<PlantType, PlantType>
         {
-            { 20, 1087 }, // Plantern
-            { 21, 1088 }, // Cactus
-            { 22, 1091 }, // Blover
-            { 23, 1089 }, // Starfruit
-            { 25, 1092 }, // Magnet-shroom
-            { 2, 1164 }, // Cherry Bomb
-            { 4, 1190 }, // Potato Mine
-            { 9, 1200 }, // Scaredy-shroom
-            { 13, 1202 }, // Squash
-            { 8, 1205 }, // Hypno-shroom
+            { PlantType.Plantern, PlantType.LanternPumpkin },
+            { PlantType.Cactus, PlantType.CactusPumpkin },
+            { PlantType.Blover, PlantType.BlowerPumpkin },
+            { PlantType.StarFruit, PlantType.StarPumpkin },
+            { PlantType.Magnetshroom, PlantType.MagnetPumpkin },
+            { PlantType.CherryBomb, PlantType.CherryPumpkin },
+            { PlantType.PotatoMine, PlantType.PotatoPumpkin },
+            { PlantType.ScaredyShroom, PlantType.ScaredyPumpkin },
+            { PlantType.Squash, PlantType.SquashPumpkin },
+            { PlantType.HypnoShroom, PlantType.HypnoPumpkin },
         };
 
-        public override void OnInitializeMelon()
-        {
-            MelonLogger.Msg("Better Pot Fusion is loaded!");
-        }
+        public override void OnInitializeMelon() => MelonLogger.Msg("Better Pot Fusion is loaded!");
 
-        public override void OnUpdate()
+        [HarmonyPatch(typeof(CreatePlant), nameof(CreatePlant.SetPlant))]
+        public static class SetPlant_Patch
         {
-            if (Board.Instance != null && Mouse.Instance.theItemOnMouse != null && Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
+            [HarmonyPrefix]
+            public static bool SetPlant(int newColumn, int newRow, PlantType theSeedType)
             {
-                TryFusion();
-            }
-        }
-
-        private void TryFusion()
-        {
-            // Loop through the plant array and check for matching plant types in the same tile
-            foreach (var plant in Board.Instance.plantArray)
-            {
-                if (plant != null && plant.thePlantColumn == Mouse.Instance.theMouseColumn && plant.thePlantRow == Mouse.Instance.theMouseRow)
+                if (!plantMixDictionary.ContainsKey(theSeedType) && theSeedType != PlantType.MagnetBlover)
+                    return true;
+                if (!Input.GetKey(KeyCode.LeftShift))
+                    return true;
+                bool isSet = false;
+                if ((GameAPP.Instance.gameObject.TryGetComponent(out TravelMgr travelMgr) && travelMgr.advancedUpgrades[44]) || Board.Instance.boardTag.isColumn)
                 {
-                    // Check if the plant on the mouse is a pumpkin
-                    if (IsPumpkin(plant))
+                    foreach (Plant plant in Board.Instance.plantArray.ToArray().Where(plant => plant != null && plant.thePlantColumn == newColumn
+                    && (plantMixDictionary.ContainsKey(plant.thePlantType) || plant.thePlantType == PlantType.MagnetPumpkin || plant.thePlantType == PlantType.SuperPumpkin
+                    || plant.thePlantType == PlantType.CactusPumpkin || plant.thePlantType == PlantType.BlowerPumpkin || plant.thePlantType == PlantType.UltimatePumpkin
+                    || plant.thePlantType == PlantType.CherryUltimatePumpkin || plant.thePlantType == PlantType.Pumpkin)))
                     {
-                        PerformFusion(plant);
-                        break;
-                    }
-                    else
-                    {
-                        int targetPlantType = GetTargetPlantType(plant);
+                        PlantType targetPlantType = GetTargetPlantType(plant);
                         if (targetPlantType != 0)
                         {
-                            PerformFusion(plant);
-                            break;
+                            if (CreatePlant.Instance.SetPlant(plant.thePlantColumn, plant.thePlantRow, targetPlantType, null, Vector2.zero, true, true) != null)
+                            {
+                                if (targetPlantType == PlantType.CherryPumpkin || targetPlantType == PlantType.CherryUltimatePumpkin)
+                                    Board.Instance.CreateCherryExplode(plant.transform.position, plant.thePlantRow);
+                                isSet = true;
+                                plant.Die(0);
+                            }
                         }
                     }
+                    if (isSet)
+                        UpdateSunAndCooldowns();
                 }
-            }
-        }
-
-        // Function to check if the plant is a pumpkin
-        private bool IsPumpkin(Plant plant)
-        {
-            return (int)plant.thePlantType == 24; // Pumpkin type ID
-        }
-
-        // Handles the fusion process and updating sun and cooldowns
-        private void PerformFusion(Plant plant)
-        {
-            int plantTypeOnMouse = (int)Mouse.Instance.thePlantTypeOnMouse;
-
-            int targetPlantType = GetTargetPlantType(plant);
-
-            if (targetPlantType != 0)
-            {
-                if (CreatePlant.Instance.SetPlant(plant.thePlantColumn, plant.thePlantRow, (PlantType)targetPlantType, null, Vector2.zero, true, true) != null)
+                else
                 {
-                    // Return sun to the player after fusion
-                    UpdateSunAndCooldowns();
-                    plant.Die(0); // Kill the original plant after fusion
+                    foreach (Plant plant in Board.Instance.plantArray.ToArray().Where(plant => plant != null && plant.thePlantColumn == newColumn && plant.thePlantRow == newRow
+                    && (plantMixDictionary.ContainsKey(plant.thePlantType) || plant.thePlantType == PlantType.MagnetPumpkin || plant.thePlantType == PlantType.SuperPumpkin
+                    || plant.thePlantType == PlantType.CactusPumpkin || plant.thePlantType == PlantType.BlowerPumpkin || plant.thePlantType == PlantType.UltimatePumpkin
+                    || plant.thePlantType == PlantType.CherryUltimatePumpkin || plant.thePlantType == PlantType.Pumpkin)))
+                    {
+                        PlantType targetPlantType = GetTargetPlantType(plant);
+                        if (targetPlantType != 0)
+                        {
+                            if (CreatePlant.Instance.SetPlant(plant.thePlantColumn, plant.thePlantRow, targetPlantType, null, Vector2.zero, true, true) != null)
+                            {
+                                if (targetPlantType == PlantType.CherryPumpkin || targetPlantType == PlantType.CherryUltimatePumpkin)
+                                    Board.Instance.CreateCherryExplode(plant.transform.position, plant.thePlantRow);
+                                isSet = true;
+                                plant.Die(0);
+                            }
+                        }
+                    }
+                    if (isSet)
+                        UpdateSunAndCooldowns();
                 }
+                return !isSet;
             }
         }
 
-        // Get the target plant type based on the current plant and the type on mouse
-        private int GetTargetPlantType(Plant plant)
+        private static PlantType GetTargetPlantType(Plant plant)
         {
-            int plantTypeOnMouse = (int)Mouse.Instance.thePlantTypeOnMouse;
-
-            if ((int)plant.thePlantType == 24)
-                return GetMixData(plantTypeOnMouse);
-            else if ((int)plant.thePlantType == 1110 && plantTypeOnMouse == 1102)
-                return 911;
-            else if ((int)plant.thePlantType == 1088 && plantTypeOnMouse == 22)
-                return 1110;
-            else if ((int)plant.thePlantType == 1091 && plantTypeOnMouse == 21)
-                return 1110;
-            else if ((int)plant.thePlantType == 911 && plantTypeOnMouse == 2)
-                return 922;
-            else if ((int)plant.thePlantType == 922 && plantTypeOnMouse == 21)
-                return 911;
-            else if ((int)plant.thePlantType == 1092 && plantTypeOnMouse == 25)
-                return 935;
-
+            PlantType plantTypeOnMouse = Mouse.Instance.thePlantTypeOnMouse;
+            if (plantMixDictionary.ContainsKey(plant.thePlantType) && plantMixDictionary.ContainsKey(plantTypeOnMouse))
+                return 0;
+            if (plant.thePlantType == PlantType.MagnetPumpkin || plant.thePlantType == PlantType.SuperPumpkin || plant.thePlantType == PlantType.UltimatePumpkin || plant.thePlantType == PlantType.CherryUltimatePumpkin)
+            {
+                if (GameAPP.Instance.gameObject.TryGetComponent(out TravelMgr travelMgr))
+                {
+                    if ((travelMgr.unlockPlant[12] || Board.Instance.boardTag.enableAllTravelPlant) && (plant.thePlantType == PlantType.UltimatePumpkin || plant.thePlantType == PlantType.SuperPumpkin || plant.thePlantType == PlantType.CherryUltimatePumpkin))
+                    {
+                        if (plant.thePlantType == PlantType.SuperPumpkin && plantTypeOnMouse == PlantType.MagnetBlover)
+                            return PlantType.UltimatePumpkin;
+                        else if (plant.thePlantType == PlantType.UltimatePumpkin && plantTypeOnMouse == PlantType.CherryBomb)
+                            return PlantType.CherryUltimatePumpkin;
+                        else if (plant.thePlantType == PlantType.CherryUltimatePumpkin && plantTypeOnMouse == PlantType.Cactus)
+                            return PlantType.UltimatePumpkin;
+                    }
+                    else if ((travelMgr.weakUltimates.ToArray().Where(weak => weak == PlantType.IFVPumpkin).Any() || Board.Instance.boardTag.enableTravelPlant) && plant.thePlantType == PlantType.MagnetPumpkin)
+                    {
+                        if (plantTypeOnMouse == PlantType.Magnetshroom)
+                            return PlantType.IFVPumpkin;
+                    }
+                    else return 0;
+                }
+            }
+            if (plant.thePlantType == PlantType.CactusPumpkin && plantTypeOnMouse == PlantType.Blover)
+                return PlantType.SuperPumpkin;
+            else if (plant.thePlantType == PlantType.BlowerPumpkin && plantTypeOnMouse == PlantType.Cactus)
+                return PlantType.SuperPumpkin;
+            if (plant.thePlantType == PlantType.Pumpkin) return plantMixDictionary.TryGetValue(plantTypeOnMouse, out PlantType mixPlantType) ? mixPlantType : 0;
             return 0;
         }
 
-        // Retrieve the fusion plant type from the dictionary
-        private int GetMixData(int plantTypeOnMouse)
-        {
-            return plantMixDictionary.TryGetValue(plantTypeOnMouse, out int mixPlantType) ? mixPlantType : 0;
-        }
-
-        // Handle sun deduction and reset of cooldowns
-        private void UpdateSunAndCooldowns()
+        private static void UpdateSunAndCooldowns()
         {
             if (Mouse.Instance.thePlantOnGlove == null)
             {
-                Board.Instance.theSun -= Mouse.Instance.theCardOnMouse.theSeedCost;
-                Mouse.Instance.theCardOnMouse.CD = 0f;
-                Mouse.Instance.theCardOnMouse.PutDown();
-                UnityEngine.Object.Destroy(Mouse.Instance.theItemOnMouse);
-                Mouse.Instance.ClearItemOnMouse(false);
+                if (Board.Instance.boardTag.isConvey)
+                {
+                    Mouse.Instance.theCardOnMouse.Die();
+                    Mouse.Instance.theCardOnMouse.PutDown();
+                    Mouse.Instance.ClearItemOnMouse(true);
+                }
+                else
+                {
+                    Board.Instance.theSun -= Mouse.Instance.theCardOnMouse.theSeedCost;
+                    Mouse.Instance.theCardOnMouse.CD = 0f;
+                    Mouse.Instance.theCardOnMouse.PutDown();
+                    UnityEngine.Object.Destroy(Mouse.Instance.theItemOnMouse);
+                    Mouse.Instance.ClearItemOnMouse(false);
+                }
             }
             else
             {

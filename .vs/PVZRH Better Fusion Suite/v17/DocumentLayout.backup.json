@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\Mods\\PVZRH-Better-Fusion-Suite\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}|Better Pot Fusion\\Better Pot Fusion.csproj|g:\\mods\\pvzrh-better-fusion-suite\\better pot fusion\\core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}|Better Pot Fusion\\Better Pot Fusion.csproj|solutionrelative:better pot fusion\\core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{688A95ED-F26D-4862-B56C-DEF07CD65745}|Better Pumpkin Fusion\\Better Pumpkin Fusion.csproj|g:\\mods\\pvzrh-better-fusion-suite\\better pumpkin fusion\\core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{688A95ED-F26D-4862-B56C-DEF07CD65745}|Better Pumpkin Fusion\\Better Pumpkin Fusion.csproj|solutionrelative:better pumpkin fusion\\core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Core.cs",
+              "DocumentMoniker": "G:\\Mods\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\Core.cs",
+              "RelativeDocumentMoniker": "Better Pot Fusion\\Core.cs",
+              "ToolTip": "G:\\Mods\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\Core.cs",
+              "RelativeToolTip": "Better Pot Fusion\\Core.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACUAAACgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T12:58:10.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Core.cs",
+              "DocumentMoniker": "G:\\Mods\\PVZRH-Better-Fusion-Suite\\Better Pumpkin Fusion\\Core.cs",
+              "RelativeDocumentMoniker": "Better Pumpkin Fusion\\Core.cs",
+              "ToolTip": "G:\\Mods\\PVZRH-Better-Fusion-Suite\\Better Pumpkin Fusion\\Core.cs",
+              "RelativeToolTip": "Better Pumpkin Fusion\\Core.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwCcAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T12:58:08.178Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

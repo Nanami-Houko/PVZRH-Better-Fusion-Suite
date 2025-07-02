@@ -37,7 +37,7 @@ namespace Better_Pumpkin_Fusion
                 if (!Input.GetKey(KeyCode.LeftShift))
                     return true;
                 bool isSet = false;
-                if (GameAPP.Instance.gameObject.TryGetComponent(out TravelMgr travelMgr) && travelMgr.advancedUpgrades[44] == true)
+                if ((GameAPP.Instance.gameObject.TryGetComponent(out TravelMgr travelMgr) && travelMgr.advancedUpgrades[44]) || Board.Instance.boardTag.isColumn)
                 {
                     foreach (Plant plant in Board.Instance.plantArray.ToArray().Where(plant => plant != null && plant.thePlantColumn == newColumn
                     && (plantMixDictionary.ContainsKey(plant.thePlantType) || plant.thePlantType == PlantType.MagnetPumpkin || plant.thePlantType == PlantType.SuperPumpkin

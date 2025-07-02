@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Mods\\PVZRH Better Fusion Suite\\Better Pot Fusion\\Better Pot Fusion.csproj",
+      "projectUniqueName": "G:\\Mods\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\Better Pot Fusion.csproj",
       "projectName": "Better_Pot_Fusion",
-      "projectPath": "G:\\Mods\\PVZRH Better Fusion Suite\\Better Pot Fusion\\Better Pot Fusion.csproj",
+      "projectPath": "G:\\Mods\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\Better Pot Fusion.csproj",
       "packagesPath": "C:\\Users\\Dimas\\.nuget\\packages\\",
-      "outputPath": "G:\\Mods\\PVZRH Better Fusion Suite\\Better Pot Fusion\\obj\\",
+      "outputPath": "G:\\Mods\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

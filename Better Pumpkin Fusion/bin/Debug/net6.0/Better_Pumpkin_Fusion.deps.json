@@ -10,8 +10,8 @@
         "dependencies": {
           "0Harmony": "2.10.2.0",
           "Assembly-CSharp": "0.0.0.0",
-          "Il2CppInterop.Common": "1.4.6.0",
-          "Il2CppInterop.Runtime": "1.4.6.0",
+          "Il2CppInterop.Common": "1.5.0.0",
+          "Il2CppInterop.Runtime": "1.5.0.0",
           "Il2CppMono.Security": "4.0.0.0",
           "Il2Cppmscorlib": "4.0.0.0",
           "Il2CppSystem.Configuration": "4.0.0.0",
@@ -19,7 +19,7 @@
           "Il2CppSystem": "4.0.0.0",
           "Il2CppSystem.Xml": "4.0.0.0",
           "Il2Cpp__Generated": "0.0.0.0",
-          "MelonLoader": "0.7.0.0",
+          "MelonLoader": "0.7.1.0",
           "Unity.2D.Animation.Runtime": "0.0.0.0",
           "Unity.2D.Tilemap.Extras": "0.0.0.0",
           "Unity.Burst": "0.0.0.0",
@@ -120,19 +120,19 @@
           }
         }
       },
-      "Il2CppInterop.Common/1.4.6.0": {
+      "Il2CppInterop.Common/1.5.0.0": {
         "runtime": {
           "Il2CppInterop.Common.dll": {
-            "assemblyVersion": "1.4.6.0",
-            "fileVersion": "1.4.6.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           }
         }
       },
-      "Il2CppInterop.Runtime/1.4.6.0": {
+      "Il2CppInterop.Runtime/1.5.0.0": {
         "runtime": {
           "Il2CppInterop.Runtime.dll": {
-            "assemblyVersion": "1.4.6.0",
-            "fileVersion": "1.4.6.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           }
         }
       },
@@ -192,11 +192,11 @@
           }
         }
       },
-      "MelonLoader/0.7.0.0": {
+      "MelonLoader/0.7.1.0": {
         "runtime": {
           "MelonLoader.dll": {
-            "assemblyVersion": "0.7.0.0",
-            "fileVersion": "0.7.0.0"
+            "assemblyVersion": "0.7.1.0",
+            "fileVersion": "0.7.1.0"
           }
         }
       },
@@ -856,11 +856,11 @@
           }
         }
       },
-      "AssetRipper.VersionUtilities/1.5.0.0": {
+      "AssetRipper.Primitives/3.1.4.0": {
         "runtime": {
-          "AssetRipper.VersionUtilities.dll": {
-            "assemblyVersion": "1.5.0.0",
-            "fileVersion": "1.5.0.0"
+          "AssetRipper.Primitives.dll": {
+            "assemblyVersion": "3.1.4.0",
+            "fileVersion": "3.1.4.0"
           }
         }
       },
@@ -912,11 +912,11 @@
           }
         }
       },
-      "Il2CppInterop.Generator/1.4.6.0": {
+      "Il2CppInterop.Generator/1.5.0.0": {
         "runtime": {
           "Il2CppInterop.Generator.dll": {
-            "assemblyVersion": "1.4.6.0",
-            "fileVersion": "1.4.6.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           }
         }
       },
@@ -960,11 +960,11 @@
           }
         }
       },
-      "Il2CppInterop.HarmonySupport/1.4.6.0": {
+      "Il2CppInterop.HarmonySupport/1.5.0.0": {
         "runtime": {
           "Il2CppInterop.HarmonySupport.dll": {
-            "assemblyVersion": "1.4.6.0",
-            "fileVersion": "1.4.6.0"
+            "assemblyVersion": "1.5.0.0",
+            "fileVersion": "1.5.0.0"
           }
         }
       },
@@ -1026,12 +1026,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Il2CppInterop.Common/1.4.6.0": {
+    "Il2CppInterop.Common/1.5.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Il2CppInterop.Runtime/1.4.6.0": {
+    "Il2CppInterop.Runtime/1.5.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1071,7 +1071,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "MelonLoader/0.7.0.0": {
+    "MelonLoader/0.7.1.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1486,7 +1486,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AssetRipper.VersionUtilities/1.5.0.0": {
+    "AssetRipper.Primitives/3.1.4.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1521,7 +1521,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Il2CppInterop.Generator/1.4.6.0": {
+    "Il2CppInterop.Generator/1.5.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1551,7 +1551,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Il2CppInterop.HarmonySupport/1.4.6.0": {
+    "Il2CppInterop.HarmonySupport/1.5.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

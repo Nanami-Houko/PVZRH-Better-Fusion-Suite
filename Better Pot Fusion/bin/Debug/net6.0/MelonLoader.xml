@@ -11465,7 +11465,7 @@
             Called before a Melon starts initializing.
             </summary>
         </member>
-        <member name="M:MelonLoader.MelonBase.CreateWrapper``1(System.String,System.String,System.String,MelonLoader.MelonGameAttribute[],MelonLoader.MelonProcessAttribute[],System.Int32,System.Nullable{System.Drawing.Color},System.Nullable{System.Drawing.Color},System.String)">
+        <member name="M:MelonLoader.MelonBase.CreateWrapper``1(System.String,System.String,System.String,MelonLoader.MelonGameAttribute[],MelonLoader.MelonProcessAttribute[],System.Int32,System.Nullable{MelonLoader.Logging.ColorARGB},System.Nullable{MelonLoader.Logging.ColorARGB},System.String)">
             <summary>
             Creates a new Melon instance for a Wrapper.
             </summary>
@@ -11750,7 +11750,7 @@
             Disables any future console color output produced by Pastel.
             </summary>
         </member>
-        <member name="M:MelonLoader.Pastel.ConsoleExtensions.Pastel(System.String,System.Drawing.Color)">
+        <member name="M:MelonLoader.Pastel.ConsoleExtensions.Pastel(System.String,MelonLoader.Logging.ColorARGB)">
             <summary>
             Returns a string wrapped in an ANSI foreground color code using the specified color.
             </summary>
@@ -11764,7 +11764,7 @@
             <param name="input">The string to color.</param>
             <param name="hexColor">The color to use on the specified string.<para>Supported format: [#]RRGGBB.</para></param>
         </member>
-        <member name="M:MelonLoader.Pastel.ConsoleExtensions.PastelBg(System.String,System.Drawing.Color)">
+        <member name="M:MelonLoader.Pastel.ConsoleExtensions.PastelBg(System.String,MelonLoader.Logging.ColorARGB)">
             <summary>
             Returns a string wrapped in an ANSI background color code using the specified color.
             </summary>
@@ -11821,6 +11821,505 @@
             Stop a currently running coroutine
             </summary>
             <param name="coroutineToken">The coroutine to stop</param>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.R">
+            <summary>Gets the red component value of this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure.</summary>
+            <returns>The red component value of this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" />.</returns>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.G">
+            <summary>Gets the green component value of this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure.</summary>
+            <returns>The green component value of this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" />.</returns>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.B">
+            <summary>Gets the blue component value of this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure.</summary>
+            <returns>The blue component value of this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" />.</returns>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.A">
+            <summary>Gets the alpha component value of this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure.</summary>
+            <returns>The alpha component value of this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" />.</returns>
+        </member>
+        <member name="M:MelonLoader.Logging.ColorARGB.FromArgb(System.UInt32)">
+            <summary>Creates a <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure from a 32-bit ARGB value.</summary>
+            <param name="argb">A value specifying the 32-bit ARGB value.</param>
+            <returns>The <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure that this method creates.</returns>
+        </member>
+        <member name="M:MelonLoader.Logging.ColorARGB.FromArgb(System.Byte,System.Byte,System.Byte,System.Byte)">
+            <summary>Creates a <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure from the four ARGB component (alpha, red, green, and blue) values.</summary>
+            <param name="alpha">The alpha component.</param>
+            <param name="red">The red component.</param>
+            <param name="green">The green component.</param>
+            <param name="blue">The blue component.</param>
+            <returns>The <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> that this method creates.</returns>
+        </member>
+        <member name="M:MelonLoader.Logging.ColorARGB.FromArgb(System.Byte,MelonLoader.Logging.ColorARGB)">
+            <summary>Creates a <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure from the specified <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure, but with the new specified alpha value.</summary>
+            <param name="alpha">The alpha value for the new <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" />.</param>
+            <param name="baseColor">The <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> from which to create the new <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" />.</param>
+            <returns>The <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> that this method creates.</returns>
+        </member>
+        <member name="M:MelonLoader.Logging.ColorARGB.FromArgb(System.Byte,System.Byte,System.Byte)">
+            <summary>Creates a <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure from the specified 8-bit color values (red, green, and blue). The alpha value is implicitly 255 (fully opaque).</summary>
+            <param name="red">The red component value for the new <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" />.</param>
+            <param name="green">The green component value for the new <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" />.</param>
+            <param name="blue">The blue component value for the new <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" />.</param>
+            <returns>The <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> that this method creates.</returns>
+        </member>
+        <member name="M:MelonLoader.Logging.ColorARGB.op_Equality(MelonLoader.Logging.ColorARGB,MelonLoader.Logging.ColorARGB)">
+            <summary>Tests whether two specified <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structures are equivalent.</summary>
+            <param name="left">The <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> that is to the left of the equality operator.</param>
+            <param name="right">The <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> that is to the right of the equality operator.</param>
+            <returns>
+            <see langword="true" /> if the two <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structures are equal; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:MelonLoader.Logging.ColorARGB.op_Inequality(MelonLoader.Logging.ColorARGB,MelonLoader.Logging.ColorARGB)">
+            <summary>Tests whether two specified <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structures are different.</summary>
+            <param name="left">The <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> that is to the left of the inequality operator.</param>
+            <param name="right">The <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> that is to the right of the inequality operator.</param>
+            <returns>
+            <see langword="true" /> if the two <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structures are different; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:MelonLoader.Logging.ColorARGB.Equals(System.Object)">
+            <summary>Tests whether the specified object is a <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure and is equivalent to this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure.</summary>
+            <param name="obj">The object to test.</param>
+            <returns>
+            <see langword="true" /> if <paramref name="obj" /> is a <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure equivalent to this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:MelonLoader.Logging.ColorARGB.Equals(MelonLoader.Logging.ColorARGB)">
+            <summary>Tests whether the specified <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure is equivalent to this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure.</summary>
+            <param name="other">The <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure to test.</param>
+            <returns>
+            <see langword="true" /> if <paramref name="other" /> is equivalent to this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:MelonLoader.Logging.ColorARGB.GetHashCode">
+            <summary>Returns a hash code for this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" /> structure.</summary>
+            <returns>An integer value that specifies the hash code for this <see cref="T:MelonLoader.Bootstrap.Logging.ColorARGB" />.</returns>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Transparent">
+            <summary>Gets a ColorARGB that has an ARGB value of #00FFFFFF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.AliceBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFF0F8FF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.AntiqueWhite">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFAEBD7.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Aqua">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF00FFFF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Aquamarine">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF7FFFD4.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Azure">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFF0FFFF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Beige">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFF5F5DC.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Bisque">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFE4C4.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Black">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF000000.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.BlanchedAlmond">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFEBCD.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Blue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF0000FF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.BlueViolet">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF8A2BE2.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Brown">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFA52A2A.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.BurlyWood">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFDEB887.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.CadetBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF5F9EA0.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Chartreuse">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF7FFF00.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Chocolate">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFD2691E.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Coral">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFF7F50.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.CornflowerBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF6495ED.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Cornsilk">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFF8DC.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Crimson">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFDC143C.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Cyan">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF00FFFF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF00008B.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkCyan">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF008B8B.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkGoldenrod">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFB8860B.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkGray">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFA9A9A9.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF006400.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkKhaki">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFBDB76B.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkMagenta">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF8B008B.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkOliveGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF556B2F.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkOrange">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFF8C00.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkOrchid">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF9932CC.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkRed">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF8B0000.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkSalmon">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFE9967A.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkSeaGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF8FBC8B.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkSlateBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF483D8B.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkSlateGray">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF2F4F4F.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkTurquoise">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF00CED1.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DarkViolet">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF9400D3.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DeepPink">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFF1493.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DeepSkyBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF00BFFF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DimGray">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF696969.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.DodgerBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF1E90FF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Firebrick">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFB22222.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.FloralWhite">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFFAF0.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.ForestGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF228B22.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Fuchsia">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFF00FF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Gainsboro">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFDCDCDC.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.GhostWhite">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFF8F8FF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Gold">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFD700.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Goldenrod">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFDAA520.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Gray">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF808080.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Green">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF008000.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.GreenYellow">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFADFF2F.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Honeydew">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFF0FFF0.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.HotPink">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFF69B4.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.IndianRed">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFCD5C5C.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Indigo">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF4B0082.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Ivory">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFFFF0.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Khaki">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFF0E68C.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Lavender">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFE6E6FA.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LavenderBlush">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFF0F5.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LawnGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF7CFC00.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LemonChiffon">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFFACD.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFADD8E6.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightCoral">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFF08080.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightCyan">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFE0FFFF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightGoldenrodYellow">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFAFAD2.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF90EE90.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightGray">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFD3D3D3.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightPink">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFB6C1.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightSalmon">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFA07A.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightSeaGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF20B2AA.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightSkyBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF87CEFA.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightSlateGray">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF778899.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightSteelBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFB0C4DE.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LightYellow">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFFFE0.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Lime">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF00FF00.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.LimeGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF32CD32.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Linen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFAF0E6.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Magenta">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFF00FF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Maroon">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF800000.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.MediumAquamarine">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF66CDAA.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.MediumBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF0000CD.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.MediumOrchid">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFBA55D3.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.MediumPurple">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF9370DB.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.MediumSeaGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF3CB371.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.MediumSlateBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF7B68EE.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.MediumSpringGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF00FA9A.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.MediumTurquoise">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF48D1CC.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.MediumVioletRed">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFC71585.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.MidnightBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF191970.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.MintCream">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFF5FFFA.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.MistyRose">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFE4E1.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Moccasin">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFE4B5.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.NavajoWhite">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFDEAD.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Navy">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF000080.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.OldLace">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFDF5E6.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Olive">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF808000.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.OliveDrab">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF6B8E23.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Orange">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFA500.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.OrangeRed">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFF4500.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Orchid">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFDA70D6.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.PaleGoldenrod">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFEEE8AA.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.PaleGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF98FB98.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.PaleTurquoise">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFAFEEEE.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.PaleVioletRed">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFDB7093.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.PapayaWhip">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFEFD5.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.PeachPuff">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFDAB9.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Peru">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFCD853F.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Pink">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFC0CB.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Plum">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFDDA0DD.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.PowderBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFB0E0E6.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Purple">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF800080.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Red">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFF0000.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.RosyBrown">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFBC8F8F.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.RoyalBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF4169E1.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.SaddleBrown">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF8B4513.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Salmon">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFA8072.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.SandyBrown">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFF4A460.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.SeaGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF2E8B57.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.SeaShell">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFF5EE.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Sienna">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFA0522D.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Silver">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFC0C0C0.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.SkyBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF87CEEB.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.SlateBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF6A5ACD.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.SlateGray">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF708090.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Snow">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFFAFA.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.SpringGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF00FF7F.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.SteelBlue">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF4682B4.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Tan">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFD2B48C.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Teal">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF008080.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Thistle">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFD8BFD8.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Tomato">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFF6347.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Turquoise">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF40E0D0.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Violet">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFEE82EE.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Wheat">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFF5DEB3.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.White">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFFFFF.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.WhiteSmoke">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFF5F5F5.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.Yellow">
+            <summary>Gets a ColorARGB that has an ARGB value of #FFFFFF00.</summary>
+        </member>
+        <member name="P:MelonLoader.Logging.ColorARGB.YellowGreen">
+            <summary>Gets a ColorARGB that has an ARGB value of #FF9ACD32.</summary>
         </member>
         <member name="M:Semver.IntExtensions.Digits(System.Int32)">
             <summary>

@@ -50,8 +50,46 @@ namespace Better_Pumpkin_Fusion
                             if (CreatePlant.Instance.SetPlant(plant.thePlantColumn, plant.thePlantRow, targetPlantType, null, Vector2.zero, true, true) != null)
                             {
                                 if (targetPlantType == PlantType.CherryPumpkin || targetPlantType == PlantType.CherryUltimatePumpkin)
-                                    Board.Instance.CreateCherryExplode(plant.transform.position, plant.thePlantRow);
+                                    Board.Instance.CreateCherryExplode(new Vector2(plant.transform.localPosition.x, plant.transform.localPosition.y + .5f), plant.thePlantRow);
                                 isSet = true;
+                                plant.Die(0);
+                            }
+                        }
+                    }
+                    if (isSet)
+                        UpdateSunAndCooldowns();
+                }
+                else if (Board.Instance.boardTag.isMirror)
+                {
+                    foreach (Plant plant in Board.Instance.plantArray.ToArray().Where(plant => plant != null && plant.thePlantColumn == newColumn && plant.thePlantRow == newRow
+                    && (plantMixDictionary.ContainsKey(plant.thePlantType) || plant.thePlantType == PlantType.MagnetPumpkin || plant.thePlantType == PlantType.SuperPumpkin
+                    || plant.thePlantType == PlantType.CactusPumpkin || plant.thePlantType == PlantType.BlowerPumpkin || plant.thePlantType == PlantType.UltimatePumpkin
+                    || plant.thePlantType == PlantType.CherryUltimatePumpkin || plant.thePlantType == PlantType.Pumpkin)))
+                    {
+                        PlantType targetPlantType = GetTargetPlantType(plant);
+                        if (targetPlantType != 0)
+                        {
+                            if (CreatePlant.Instance.SetPlant(plant.thePlantColumn, plant.thePlantRow, targetPlantType, null, Vector2.zero, true, true) != null)
+                            {
+                                if (targetPlantType == PlantType.CherryPumpkin || targetPlantType == PlantType.CherryUltimatePumpkin)
+                                    Board.Instance.CreateCherryExplode(new Vector2(plant.transform.localPosition.x, plant.transform.localPosition.y + .5f), plant.thePlantRow);
+                                isSet = true;
+                                foreach (Plant plant2 in Board.Instance.plantArray.ToArray().Where(plant2 => plant2 != null && plant2.thePlantColumn == newColumn && plant2.thePlantRow == Math.Abs(plant.thePlantRow - 5)
+                                && (plantMixDictionary.ContainsKey(plant2.thePlantType) || plant2.thePlantType == PlantType.MagnetPumpkin || plant2.thePlantType == PlantType.SuperPumpkin
+                                || plant2.thePlantType == PlantType.CactusPumpkin || plant2.thePlantType == PlantType.BlowerPumpkin || plant2.thePlantType == PlantType.UltimatePumpkin
+                                || plant2.thePlantType == PlantType.CherryUltimatePumpkin || plant2.thePlantType == PlantType.Pumpkin)))
+                                {
+                                    PlantType targetPlantType2 = GetTargetPlantType(plant2);
+                                    if (targetPlantType2 != 0)
+                                    {
+                                        if (CreatePlant.Instance.SetPlant(plant2.thePlantColumn, plant2.thePlantRow, targetPlantType2, null, Vector2.zero, true, true) != null)
+                                        {
+                                            if (targetPlantType2 == PlantType.CherryPumpkin || targetPlantType2 == PlantType.CherryUltimatePumpkin)
+                                                Board.Instance.CreateCherryExplode(new Vector2(plant2.transform.localPosition.x, plant2.transform.localPosition.y + .5f), plant2.thePlantRow);
+                                            plant2.Die(0);
+                                        }
+                                    }
+                                }
                                 plant.Die(0);
                             }
                         }
@@ -72,7 +110,7 @@ namespace Better_Pumpkin_Fusion
                             if (CreatePlant.Instance.SetPlant(plant.thePlantColumn, plant.thePlantRow, targetPlantType, null, Vector2.zero, true, true) != null)
                             {
                                 if (targetPlantType == PlantType.CherryPumpkin || targetPlantType == PlantType.CherryUltimatePumpkin)
-                                    Board.Instance.CreateCherryExplode(plant.transform.position, plant.thePlantRow);
+                                    Board.Instance.CreateCherryExplode(new Vector2(plant.transform.localPosition.x, plant.transform.localPosition.y + .5f), plant.thePlantRow);
                                 isSet = true;
                                 plant.Die(0);
                             }

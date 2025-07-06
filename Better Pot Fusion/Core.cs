@@ -20,6 +20,7 @@ namespace Better_Pot_Fusion
             { PlantType.Melonpult, PlantType.MelonPot },
             { PlantType.SunFlower, PlantType.SunPot },
             { PlantType.Plantern, PlantType.LanternPot },
+            { PlantType.CherryBomb, PlantType.CherryPot },
         };
 
         public override void OnInitializeMelon() => MelonLogger.Msg("Better Pot Fusion is loaded!");
@@ -44,6 +45,8 @@ namespace Better_Pot_Fusion
                         {
                             if (CreatePlant.Instance.SetPlant(plant.thePlantColumn, plant.thePlantRow, targetPlantType, null, Vector2.zero, true, true) != null)
                             {
+                                if (targetPlantType == PlantType.CherryPot)
+                                    Board.Instance.CreateCherryExplode(new Vector2(plant.transform.localPosition.x, plant.transform.localPosition.y + 1.5f), plant.thePlantRow);
                                 CreateItem.Instance.SetCoin(plant.thePlantColumn, plant.thePlantRow, 0, 0);
                                 if (Mouse.Instance.thePlantTypeOnMouse == PlantType.Melonpult)
                                 {
@@ -52,6 +55,43 @@ namespace Better_Pot_Fusion
                                     CreateItem.Instance.SetCoin(plant.thePlantColumn, plant.thePlantRow, 1, 0);
                                 }
                                 isSet = true;
+                                plant.Die(0);
+                            }
+                        }
+                    }
+                    if (isSet)
+                        UpdateSunAndCooldowns();
+                }
+                else if (Board.Instance.boardTag.isMirror)
+                {
+                    foreach (Plant plant in Board.Instance.plantArray.ToArray().Where(plant => plant != null && plant.thePlantColumn == newColumn && plant.thePlantRow == newRow && (plantMixDictionary.ContainsKey(plant.thePlantType) || plant.thePlantType == PlantType.GoldPot || plant.thePlantType == PlantType.Pot)))
+                    {
+                        PlantType targetPlantType = GetTargetPlantType(plant);
+                        if (targetPlantType != 0)
+                        {
+                            if (CreatePlant.Instance.SetPlant(plant.thePlantColumn, plant.thePlantRow, targetPlantType, null, Vector2.zero, true, true) != null)
+                            {
+                                if (targetPlantType == PlantType.CherryPot)
+                                    Board.Instance.CreateCherryExplode(new Vector2(plant.transform.localPosition.x, plant.transform.localPosition.y + 1.5f), plant.thePlantRow);
+                                CreateItem.Instance.SetCoin(plant.thePlantColumn, plant.thePlantRow, 0, 0);
+                                if (Mouse.Instance.thePlantTypeOnMouse == PlantType.Melonpult)
+                                {
+                                    CreateItem.Instance.SetCoin(plant.thePlantColumn, plant.thePlantRow, 1, 0);
+                                    CreateItem.Instance.SetCoin(plant.thePlantColumn, plant.thePlantRow, 1, 0);
+                                    CreateItem.Instance.SetCoin(plant.thePlantColumn, plant.thePlantRow, 1, 0);
+                                }
+                                isSet = true;
+                                foreach (Plant plant2 in Board.Instance.plantArray.ToArray().Where(plant2 => plant2 != null && plant2.thePlantColumn == newColumn && plant2.thePlantRow == Math.Abs(plant.thePlantRow - 5) && (plantMixDictionary.ContainsKey(plant.thePlantType) || plant.thePlantType == PlantType.GoldPot || plant.thePlantType == PlantType.Pot)))
+                                {
+                                    PlantType targetPlantType2 = GetTargetPlantType(plant2);
+                                    if (targetPlantType2 != 0)
+                                        if (CreatePlant.Instance.SetPlant(plant2.thePlantColumn, plant2.thePlantRow, targetPlantType2, null, Vector2.zero, true, true) != null)
+                                        {
+                                            if (targetPlantType2 == PlantType.CherryPot)
+                                                Board.Instance.CreateCherryExplode(new Vector2(plant2.transform.localPosition.x, plant2.transform.localPosition.y + 1.5f), plant2.thePlantRow);
+                                            plant2.Die(0);
+                                        }
+                                }
                                 plant.Die(0);
                             }
                         }
@@ -68,6 +108,8 @@ namespace Better_Pot_Fusion
                         {
                             if (CreatePlant.Instance.SetPlant(plant.thePlantColumn, plant.thePlantRow, targetPlantType, null, Vector2.zero, true, true) != null)
                             {
+                                if (targetPlantType == PlantType.CherryPot)
+                                    Board.Instance.CreateCherryExplode(new Vector2(plant.transform.localPosition.x, plant.transform.localPosition.y + 1.5f), plant.thePlantRow);
                                 CreateItem.Instance.SetCoin(plant.thePlantColumn, plant.thePlantRow, 0, 0);
                                 if (Mouse.Instance.thePlantTypeOnMouse == PlantType.Melonpult)
                                 {

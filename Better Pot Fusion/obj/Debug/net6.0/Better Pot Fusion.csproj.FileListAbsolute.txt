@@ -95,7 +95,6 @@ G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\bin\Debug\net6.0\UnityEngine
 G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\bin\Debug\net6.0\MonoMod.Utils.dll
 G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\bin\Debug\net6.0\MonoMod.RuntimeDetour.dll
 G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\bin\Debug\net6.0\bHapticsLib.dll
-G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\bin\Debug\net6.0\AssetRipper.VersionUtilities.dll
 G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\bin\Debug\net6.0\Tomlet.dll
 G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\bin\Debug\net6.0\Mono.Cecil.dll
 G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\bin\Debug\net6.0\AssetsTools.NET.dll
@@ -126,3 +125,5 @@ G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\obj\Debug\net6.0\Better_Pot_
 G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\obj\Debug\net6.0\refint\Better_Pot_Fusion.dll
 G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\obj\Debug\net6.0\Better_Pot_Fusion.pdb
 G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\obj\Debug\net6.0\ref\Better_Pot_Fusion.dll
+G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\bin\Debug\net6.0\AssetRipper.Primitives.dll
+G:\Mods\PVZRH-Better-Fusion-Suite\Better Pot Fusion\bin\Debug\net6.0\MelonLoader.pdb

@@ -24,7 +24,7 @@ namespace Better_Pumpkin_Fusion
             { PlantType.HypnoShroom, PlantType.HypnoPumpkin },
         };
 
-        public override void OnInitializeMelon() => MelonLogger.Msg("Better Pot Fusion is loaded!");
+        public override void OnInitializeMelon() => MelonLogger.Msg("Better Pumpkin Fusion is loaded!");
 
         [HarmonyPatch(typeof(CreatePlant), nameof(CreatePlant.SetPlant))]
         public static class SetPlant_Patch

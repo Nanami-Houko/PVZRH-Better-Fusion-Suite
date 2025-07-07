@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Better_Pot_Fusion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+adecb0384c66edf5fa75e27dbc2efdd6e28aeb4d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef2fc0523daa2fa9832af699c18e765f910cbf61")]
 [assembly: System.Reflection.AssemblyProductAttribute("Better_Pot_Fusion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Better_Pot_Fusion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

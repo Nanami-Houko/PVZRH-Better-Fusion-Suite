@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Better_Pumpkin_Fusion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89c150576326a73cb139579398e6fba256a2a318")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+459b6673e9de07ea9ba60ee7aa82271a472f7f65")]
 [assembly: System.Reflection.AssemblyProductAttribute("Better_Pumpkin_Fusion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Better_Pumpkin_Fusion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

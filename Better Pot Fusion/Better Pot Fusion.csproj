@@ -12,7 +12,7 @@
 		<AssemblyName>Better_Pot_Fusion</AssemblyName>
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
-    <GamePath>G:\Fusion 2.7</GamePath>
+    <GamePath>G:\Fusion 2.8</GamePath>
 	</PropertyGroup>
 
   <ItemGroup>

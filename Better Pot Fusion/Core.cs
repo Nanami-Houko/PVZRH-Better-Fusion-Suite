@@ -21,6 +21,7 @@ namespace Better_Pot_Fusion
             { PlantType.SunFlower, PlantType.SunPot },
             { PlantType.Plantern, PlantType.LanternPot },
             { PlantType.CherryBomb, PlantType.CherryPot },
+            { PlantType.IceShroom, PlantType.IcePot },
         };
 
         public override void OnInitializeMelon() => MelonLogger.Msg("Better Pot Fusion is loaded!");
@@ -47,6 +48,8 @@ namespace Better_Pot_Fusion
                             {
                                 if (targetPlantType == PlantType.CherryPot)
                                     Board.Instance.CreateCherryExplode(new Vector2(plant.transform.localPosition.x, plant.transform.localPosition.y + 1.5f), plant.thePlantRow);
+                                if (targetPlantType == PlantType.IcePot)
+                                    Board.Instance.CreateFreeze(new Vector2(plant.transform.localPosition.x, plant.transform.localPosition.y));
                                 CreateItem.Instance.SetCoin(plant.thePlantColumn, plant.thePlantRow, 0, 0);
                                 if (Mouse.Instance.thePlantTypeOnMouse == PlantType.Melonpult)
                                 {
@@ -73,6 +76,8 @@ namespace Better_Pot_Fusion
                             {
                                 if (targetPlantType == PlantType.CherryPot)
                                     Board.Instance.CreateCherryExplode(new Vector2(plant.transform.localPosition.x, plant.transform.localPosition.y + 1.5f), plant.thePlantRow);
+                                if (targetPlantType == PlantType.IcePot)
+                                    Board.Instance.CreateFreeze(new Vector2(plant.transform.localPosition.x, plant.transform.localPosition.y));
                                 CreateItem.Instance.SetCoin(plant.thePlantColumn, plant.thePlantRow, 0, 0);
                                 if (Mouse.Instance.thePlantTypeOnMouse == PlantType.Melonpult)
                                 {
@@ -110,6 +115,8 @@ namespace Better_Pot_Fusion
                             {
                                 if (targetPlantType == PlantType.CherryPot)
                                     Board.Instance.CreateCherryExplode(new Vector2(plant.transform.localPosition.x, plant.transform.localPosition.y + 1.5f), plant.thePlantRow);
+                                if (targetPlantType == PlantType.IcePot)
+                                    Board.Instance.CreateFreeze(new Vector2(plant.transform.localPosition.x, plant.transform.localPosition.y));
                                 CreateItem.Instance.SetCoin(plant.thePlantColumn, plant.thePlantRow, 0, 0);
                                 if (Mouse.Instance.thePlantTypeOnMouse == PlantType.Melonpult)
                                 {

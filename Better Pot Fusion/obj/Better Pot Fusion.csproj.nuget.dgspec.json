@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Mods\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\Better Pot Fusion.csproj": {}
+    "G:\\Mods\\MelonLoader\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\Better Pot Fusion.csproj": {}
   },
   "projects": {
-    "G:\\Mods\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\Better Pot Fusion.csproj": {
+    "G:\\Mods\\MelonLoader\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\Better Pot Fusion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Mods\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\Better Pot Fusion.csproj",
+        "projectUniqueName": "G:\\Mods\\MelonLoader\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\Better Pot Fusion.csproj",
         "projectName": "Better_Pot_Fusion",
-        "projectPath": "G:\\Mods\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\Better Pot Fusion.csproj",
+        "projectPath": "G:\\Mods\\MelonLoader\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\Better Pot Fusion.csproj",
         "packagesPath": "C:\\Users\\Dimas\\.nuget\\packages\\",
-        "outputPath": "G:\\Mods\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\obj\\",
+        "outputPath": "G:\\Mods\\MelonLoader\\PVZRH-Better-Fusion-Suite\\Better Pot Fusion\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net6.0": {
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

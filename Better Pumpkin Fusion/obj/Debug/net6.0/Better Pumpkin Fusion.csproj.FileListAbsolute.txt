@@ -257,3 +257,4 @@ G:\Mods\MelonLoader\PVZRH-Better-Fusion-Suite\Better Pumpkin Fusion\obj\Debug\ne
 G:\Mods\MelonLoader\PVZRH-Better-Fusion-Suite\Better Pumpkin Fusion\obj\Debug\net6.0\refint\Better_Pumpkin_Fusion.dll
 G:\Mods\MelonLoader\PVZRH-Better-Fusion-Suite\Better Pumpkin Fusion\obj\Debug\net6.0\Better_Pumpkin_Fusion.pdb
 G:\Mods\MelonLoader\PVZRH-Better-Fusion-Suite\Better Pumpkin Fusion\obj\Debug\net6.0\ref\Better_Pumpkin_Fusion.dll
+G:\Mods\MelonLoader\PVZRH-Better-Fusion-Suite\Better Pumpkin Fusion\bin\Debug\net6.0\UnityEngine.Il2CppAssetBundleManager.dll

@@ -12,7 +12,7 @@
 		<AssemblyName>Better_Pumpkin_Fusion</AssemblyName>
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
-    <GamePath>G:\Fusion 2.8</GamePath>
+    <GamePath>G:\Fusion 2.8.1</GamePath>
 	</PropertyGroup>
 
 	<ItemGroup>

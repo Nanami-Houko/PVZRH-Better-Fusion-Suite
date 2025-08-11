@@ -22,6 +22,7 @@ namespace Better_Pumpkin_Fusion
             { PlantType.ScaredyShroom, PlantType.ScaredyPumpkin },
             { PlantType.Squash, PlantType.SquashPumpkin },
             { PlantType.HypnoShroom, PlantType.HypnoPumpkin },
+            { PlantType.TorchWood, PlantType.TorchPumpkin },
         };
 
         public override void OnInitializeMelon() => MelonLogger.Msg("Better Pumpkin Fusion is loaded!");

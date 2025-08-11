@@ -12,7 +12,11 @@
 		<AssemblyName>Better_Pot_Fusion</AssemblyName>
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
+<<<<<<< HEAD
+    <GamePath>G:\Fusion 2.8.1</GamePath>
+=======
     <GamePath>D:\Pvz Alt\PvZ Fusion Multi-lang by Blooms\Game Files</GamePath>
+>>>>>>> 46caff2b7ca0133ec799b700aa3851ebab5acf3e
 	</PropertyGroup>
 
   <ItemGroup>

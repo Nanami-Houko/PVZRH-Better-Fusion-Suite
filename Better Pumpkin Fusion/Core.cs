@@ -3,7 +3,7 @@ using Il2Cpp;
 using MelonLoader;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(Better_Pumpkin_Fusion.Core), "Better Pumpkin Fusion", "231.0.0", "dynaslash, JustNull & Mamoru-kun", null)]
+[assembly: MelonInfo(typeof(Better_Pumpkin_Fusion.Core), "Better Pumpkin Fusion", "231.0.0", "dynaslash, Dakosha, JustNull & Mamoru-kun", null)]
 [assembly: MelonGame("LanPiaoPiao", "PlantsVsZombiesRH")]
 
 namespace Better_Pumpkin_Fusion

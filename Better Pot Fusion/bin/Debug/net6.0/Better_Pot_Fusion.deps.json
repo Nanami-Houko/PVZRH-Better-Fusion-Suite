@@ -51,7 +51,6 @@
           "UnityEngine.GIModule": "0.0.0.0",
           "UnityEngine.GridModule": "0.0.0.0",
           "UnityEngine.HotReloadModule": "0.0.0.0",
-          "UnityEngine.Il2CppAssetBundleManager": "0.6.4.0",
           "UnityEngine.ImageConversionModule": "0.0.0.0",
           "UnityEngine.IMGUIModule": "0.0.0.0",
           "UnityEngine.InputLegacyModule": "0.0.0.0",
@@ -445,14 +444,6 @@
           "UnityEngine.HotReloadModule.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "UnityEngine.Il2CppAssetBundleManager/0.6.4.0": {
-        "runtime": {
-          "UnityEngine.Il2CppAssetBundleManager.dll": {
-            "assemblyVersion": "0.6.4.0",
-            "fileVersion": "0.6.4.0"
           }
         }
       },
@@ -1243,11 +1234,6 @@
       "sha512": ""
     },
     "UnityEngine.HotReloadModule/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "UnityEngine.Il2CppAssetBundleManager/0.6.4.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

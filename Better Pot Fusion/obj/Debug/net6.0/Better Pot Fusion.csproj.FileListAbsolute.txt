@@ -257,4 +257,3 @@ G:\Mods\MelonLoader\PVZRH-Better-Fusion-Suite\Better Pot Fusion\obj\Debug\net6.0
 G:\Mods\MelonLoader\PVZRH-Better-Fusion-Suite\Better Pot Fusion\obj\Debug\net6.0\refint\Better_Pot_Fusion.dll
 G:\Mods\MelonLoader\PVZRH-Better-Fusion-Suite\Better Pot Fusion\obj\Debug\net6.0\Better_Pot_Fusion.pdb
 G:\Mods\MelonLoader\PVZRH-Better-Fusion-Suite\Better Pot Fusion\obj\Debug\net6.0\ref\Better_Pot_Fusion.dll
-G:\Mods\MelonLoader\PVZRH-Better-Fusion-Suite\Better Pot Fusion\bin\Debug\net6.0\UnityEngine.Il2CppAssetBundleManager.dll

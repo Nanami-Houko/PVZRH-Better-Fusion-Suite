@@ -3,7 +3,7 @@ using Il2Cpp;
 using MelonLoader;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(Better_Pot_Fusion.Core), "Better Pot Fusion", "282.0.0", "dynaslash, Dakosha, JustNull & Mamoru-kun", null)]
+[assembly: MelonInfo(typeof(Better_Pot_Fusion.Core), "Better Pot Fusion", "231.0.0", "dynaslash, Dakosha, JustNull & Mamoru-kun", null)]
 [assembly: MelonGame("LanPiaoPiao", "PlantsVsZombiesRH")]
 
 namespace Better_Pot_Fusion
@@ -22,6 +22,7 @@ namespace Better_Pot_Fusion
             { PlantType.Plantern, PlantType.LanternPot },
             { PlantType.CherryBomb, PlantType.CherryPot },
             { PlantType.IceShroom, PlantType.IcePot },
+            { PlantType.WallNut, PlantType.NutPot },
         };
 
         public override void OnInitializeMelon() => MelonLogger.Msg("Better Pot Fusion is loaded!");

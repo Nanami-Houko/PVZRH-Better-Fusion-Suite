@@ -3,7 +3,7 @@ using Il2Cpp;
 using MelonLoader;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(Better_Pumpkin_Fusion.Core), "Better Pumpkin Fusion", "282.0.0", "dynaslash, Dakosha, JustNull & Mamoru-kun", null)]
+[assembly: MelonInfo(typeof(Better_Pumpkin_Fusion.Core), "Better Pumpkin Fusion", "231.0.0", "dynaslash, Dakosha, JustNull & Mamoru-kun", null)]
 [assembly: MelonGame("LanPiaoPiao", "PlantsVsZombiesRH")]
 
 namespace Better_Pumpkin_Fusion
@@ -23,6 +23,8 @@ namespace Better_Pumpkin_Fusion
             { PlantType.Squash, PlantType.SquashPumpkin },
             { PlantType.HypnoShroom, PlantType.HypnoPumpkin },
             { PlantType.TorchWood, PlantType.TorchPumpkin },
+            { PlantType.WallNut, PlantType.NutPumpkin },
+            { PlantType.Peashooter, PlantType.PeaPumpkin },
         };
 
         public override void OnInitializeMelon() => MelonLogger.Msg("Better Pumpkin Fusion is loaded!");

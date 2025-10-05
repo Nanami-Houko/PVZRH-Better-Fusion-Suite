@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\VSCode\\PVZF-Better-Suite\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}|Better Pot Fusion\\Better Pot Fusion.MelonLoader.csproj|d:\\vscode\\pvzf-better-suite\\better pot fusion\\better pot fusion.melonloader.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}|Better Pot Fusion\\Better Pot Fusion.MelonLoader.csproj|solutionrelative:better pot fusion\\better pot fusion.melonloader.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{688A95ED-F26D-4862-B56C-DEF07CD65745}|Better Pumpkin Fusion\\Better Pumpkin Fusion.csproj|d:\\vscode\\pvzf-better-suite\\better pumpkin fusion\\core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{688A95ED-F26D-4862-B56C-DEF07CD65745}|Better Pumpkin Fusion\\Better Pumpkin Fusion.csproj|solutionrelative:better pumpkin fusion\\core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{688A95ED-F26D-4862-B56C-DEF07CD65745}|Better Pumpkin Fusion\\Better Pumpkin Fusion.MelonLoader.csproj|d:\\vscode\\pvzf-better-suite\\better pumpkin fusion\\better pumpkin fusion.melonloader.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{688A95ED-F26D-4862-B56C-DEF07CD65745}|Better Pumpkin Fusion\\Better Pumpkin Fusion.MelonLoader.csproj|solutionrelative:better pumpkin fusion\\better pumpkin fusion.melonloader.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}|Better Pot Fusion\\Better Pot Fusion.MelonLoader.csproj|d:\\vscode\\pvzf-better-suite\\better pot fusion\\better pot fusion.melonloader.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}|Better Pot Fusion\\Better Pot Fusion.MelonLoader.csproj|solutionrelative:better pot fusion\\better pot fusion.melonloader.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Better Pumpkin Fusion.csproj",
               "DocumentMoniker": "D:\\VSCode\\PVZF-Better-Suite\\Better Pumpkin Fusion\\Better Pumpkin Fusion.MelonLoader.csproj",
               "RelativeDocumentMoniker": "Better Pumpkin Fusion\\Better Pumpkin Fusion.MelonLoader.csproj",
@@ -63,20 +63,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Better Pot Fusion.csproj",
               "DocumentMoniker": "D:\\VSCode\\PVZF-Better-Suite\\Better Pot Fusion\\Better Pot Fusion.MelonLoader.csproj",
               "RelativeDocumentMoniker": "Better Pot Fusion\\Better Pot Fusion.MelonLoader.csproj",
               "ToolTip": "D:\\VSCode\\PVZF-Better-Suite\\Better Pot Fusion\\Better Pot Fusion.MelonLoader.csproj",
               "RelativeToolTip": "Better Pot Fusion\\Better Pot Fusion.MelonLoader.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-08-08T21:18:26.281Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Core.cs",
               "DocumentMoniker": "D:\\VSCode\\PVZF-Better-Suite\\Better Pumpkin Fusion\\Core.cs",
               "RelativeDocumentMoniker": "Better Pumpkin Fusion\\Core.cs",
@@ -89,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Core.cs",
               "DocumentMoniker": "D:\\VSCode\\PVZF-Better-Suite\\Better Pot Fusion\\Core.cs",
               "RelativeDocumentMoniker": "Better Pot Fusion\\Core.cs",

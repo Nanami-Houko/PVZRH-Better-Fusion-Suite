@@ -13,7 +13,7 @@ namespace Better_Pumpkin_Fusion
 	{
 		public const string PluginGuid = "pvzrh.betterpumpkinfusion";
 		public const string PluginName = "Better Pumpkin Fusion";
-		public const string PluginVersion = "282.0.0";
+		public const string PluginVersion = "301.0.0";
 
 		public override void Load()
 		{
@@ -38,6 +38,8 @@ namespace Better_Pumpkin_Fusion
 			{ PlantType.Squash, PlantType.SquashPumpkin },
 			{ PlantType.HypnoShroom, PlantType.HypnoPumpkin },
 			{ PlantType.TorchWood, PlantType.TorchPumpkin },
+			{ PlantType.WallNut, PlantType.NutPumpkin },
+            { PlantType.Peashooter, PlantType.PeaPumpkin },
 		};
 
 		[HarmonyPatch(typeof(CreatePlant), nameof(CreatePlant.SetPlant))]

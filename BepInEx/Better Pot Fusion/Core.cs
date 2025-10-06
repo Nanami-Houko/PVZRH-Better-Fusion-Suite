@@ -13,7 +13,7 @@ namespace Better_Pot_Fusion
 	{
 		public const string PluginGuid = "pvzrh.betterpotfusion";
 		public const string PluginName = "Better Pot Fusion";
-		public const string PluginVersion = "282.0.0";
+		public const string PluginVersion = "301.0.0";
 
 		public override void Load()
 		{
@@ -37,6 +37,7 @@ namespace Better_Pot_Fusion
 			{ PlantType.Plantern, PlantType.LanternPot },
 			{ PlantType.CherryBomb, PlantType.CherryPot },
 			{ PlantType.IceShroom, PlantType.IcePot },
+			{ PlantType.WallNut, PlantType.NutPot },
 		};
 
 		[HarmonyPatch(typeof(CreatePlant), nameof(CreatePlant.SetPlant))]

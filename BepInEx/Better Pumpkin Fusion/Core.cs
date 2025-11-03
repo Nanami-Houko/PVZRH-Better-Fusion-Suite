@@ -52,6 +52,33 @@ namespace Better_Pumpkin_Fusion
 					return true;
 				if (!Input.GetKey(KeyCode.LeftShift))
 					return true;
+				if (Mouse.Instance.thePlantTypeOnMouse == PlantType.WallNut)
+				{
+					var cellPlants = Lawnf.Get1x1Plants(newColumn, newRow);
+					if (cellPlants != null)
+					{
+						bool hasMechaNut = false;
+						bool hasNutPumpkin = false;
+						Plant pumpkin = null;
+						for (int i = 0; i < cellPlants.Count; i++)
+						{
+							Plant p = cellPlants[i];
+							if (p == null) continue;
+							if (p.thePlantType == PlantType.SuperMachineNut || p.thePlantType == PlantType.MachineNut) hasMechaNut = true;
+							if (p.thePlantType == PlantType.NutPumpkin) hasNutPumpkin = true;
+							if (pumpkin == null && p.thePlantType == PlantType.Pumpkin) pumpkin = p;
+						}
+						if (hasMechaNut && !hasNutPumpkin && pumpkin != null)
+						{
+							if (CreatePlant.Instance.SetPlant(pumpkin.thePlantColumn, pumpkin.thePlantRow, PlantType.NutPumpkin, null, Vector2.zero, true, true) != null)
+							{
+								pumpkin.Die(0);
+								UpdateSunAndCooldowns();
+								return false;
+							}
+						}
+					}
+				}
 				bool isSet = false;
 				if ((GameAPP.Instance.gameObject.TryGetComponent(out TravelMgr travelMgr) && travelMgr.advancedUpgrades[44]) || Board.Instance.boardTag.isColumn)
 				{
@@ -136,6 +163,73 @@ namespace Better_Pumpkin_Fusion
 						UpdateSunAndCooldowns();
 				}
 				return !isSet;
+			}
+		}
+
+		[HarmonyPatch(typeof(SuperMachineNut), nameof(SuperMachineNut.Instead))]
+		public static class SuperMachineNut_Instead_Patch
+		{
+			[HarmonyPrefix]
+			public static bool Prefix(SuperMachineNut __instance, int theDamage, ref bool __result)
+			{
+				if (!Input.GetKey(KeyCode.LeftShift)) return true;
+				int col = __instance.thePlantColumn;
+				int row = __instance.thePlantRow;
+				var cellPlants = Lawnf.Get1x1Plants(col, row);
+				if (cellPlants == null) return true;
+				bool hasNutPumpkin = false;
+				Plant pumpkin = null;
+				for (int i = 0; i < cellPlants.Count; i++)
+				{
+					Plant p = cellPlants[i];
+					if (p == null) continue;
+					if (p.thePlantType == PlantType.NutPumpkin) hasNutPumpkin = true;
+					if (pumpkin == null && p.thePlantType == PlantType.Pumpkin) pumpkin = p;
+				}
+				if (!hasNutPumpkin && pumpkin != null)
+				{
+					if (CreatePlant.Instance.SetPlant(pumpkin.thePlantColumn, pumpkin.thePlantRow, PlantType.NutPumpkin, null, Vector2.zero, true, true) != null)
+					{
+						pumpkin.Die(0);
+						UpdateSunAndCooldowns();
+						__result = false;
+						return false;
+					}
+				}
+				return true;
+			}
+		}
+
+		[HarmonyPatch(typeof(SuperMachineNut), nameof(SuperMachineNut.Summon))]
+		public static class SuperMachineNut_Summon_Patch
+		{
+			[HarmonyPrefix]
+			public static bool Prefix(SuperMachineNut __instance)
+			{
+				if (!Input.GetKey(KeyCode.LeftShift)) return true;
+				int col = __instance.thePlantColumn;
+				int row = __instance.thePlantRow;
+				var cellPlants = Lawnf.Get1x1Plants(col, row);
+				if (cellPlants == null) return true;
+				bool hasNutPumpkin = false;
+				Plant pumpkin = null;
+				for (int i = 0; i < cellPlants.Count; i++)
+				{
+					Plant p = cellPlants[i];
+					if (p == null) continue;
+					if (p.thePlantType == PlantType.NutPumpkin) hasNutPumpkin = true;
+					if (pumpkin == null && p.thePlantType == PlantType.Pumpkin) pumpkin = p;
+				}
+				if (!hasNutPumpkin && pumpkin != null)
+				{
+					if (CreatePlant.Instance.SetPlant(pumpkin.thePlantColumn, pumpkin.thePlantRow, PlantType.NutPumpkin, null, Vector2.zero, true, true) != null)
+					{
+						pumpkin.Die(0);
+						UpdateSunAndCooldowns();
+						return false;
+					}
+				}
+				return true;
 			}
 		}
 

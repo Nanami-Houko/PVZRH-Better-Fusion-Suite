@@ -37,6 +37,34 @@ namespace Better_Pot_Fusion
                     return true;
                 if (!Input.GetKey(KeyCode.LeftAlt))
                     return true;
+                if (Mouse.Instance.thePlantTypeOnMouse == PlantType.WallNut)
+                {
+                    var cellPlants = Lawnf.Get1x1Plants(newColumn, newRow);
+                    if (cellPlants != null)
+                    {
+                        bool hasMechaNut = false;
+                        bool hasNutPot = false;
+                        Plant pot = null;
+                        for (int i = 0; i < cellPlants.Count; i++)
+                        {
+                            Plant p = cellPlants[i];
+                            if (p == null) continue;
+                            if (p.thePlantType == PlantType.SuperMachineNut || p.thePlantType == PlantType.MachineNut) hasMechaNut = true;
+                            if (p.thePlantType == PlantType.NutPot) hasNutPot = true;
+                            if (pot == null && (p.thePlantType == PlantType.Pot || p.thePlantType == PlantType.GoldPot)) pot = p;
+                        }
+                        if (hasMechaNut && !hasNutPot && pot != null)
+                        {
+                            if (CreatePlant.Instance.SetPlant(pot.thePlantColumn, pot.thePlantRow, PlantType.NutPot, null, Vector2.zero, true, true) != null)
+                            {
+                                CreateItem.Instance.SetCoin(pot.thePlantColumn, pot.thePlantRow, 0, 0);
+                                pot.Die(0);
+                                UpdateSunAndCooldowns();
+                                return false;
+                            }
+                        }
+                    }
+                }
                 bool isSet = false;
                 if ((GameAPP.Instance.gameObject.TryGetComponent(out TravelMgr travelMgr) && travelMgr.advancedUpgrades[44]) || Board.Instance.boardTag.isColumn)
                 {
@@ -182,6 +210,75 @@ namespace Better_Pot_Fusion
                 UnityEngine.Object.Destroy(Mouse.Instance.theItemOnMouse);
                 Mouse.Instance.ClearItemOnMouse(true);
             }
+        }
+    }
+
+    [HarmonyPatch(typeof(SuperMachineNut), nameof(SuperMachineNut.Instead))]
+    public static class SuperMachineNut_Instead_Patch
+    {
+        [HarmonyPrefix]
+        public static bool Prefix(SuperMachineNut __instance, int theDamage, ref bool __result)
+        {
+            if (!Input.GetKey(KeyCode.LeftAlt)) return true;
+            int col = __instance.thePlantColumn;
+            int row = __instance.thePlantRow;
+            var cellPlants = Lawnf.Get1x1Plants(col, row);
+            if (cellPlants == null) return true;
+            bool hasNutPot = false;
+            Plant pot = null;
+            for (int i = 0; i < cellPlants.Count; i++)
+            {
+                Plant p = cellPlants[i];
+                if (p == null) continue;
+                if (p.thePlantType == PlantType.NutPot) hasNutPot = true;
+                if (pot == null && (p.thePlantType == PlantType.Pot || p.thePlantType == PlantType.GoldPot)) pot = p;
+            }
+            if (!hasNutPot && pot != null)
+            {
+                if (CreatePlant.Instance.SetPlant(pot.thePlantColumn, pot.thePlantRow, PlantType.NutPot, null, Vector2.zero, true, true) != null)
+                {
+                    CreateItem.Instance.SetCoin(pot.thePlantColumn, pot.thePlantRow, 0, 0);
+                    pot.Die(0);
+                    Core.UpdateSunAndCooldowns();
+                    __result = false;
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(SuperMachineNut), nameof(SuperMachineNut.Summon))]
+    public static class SuperMachineNut_Summon_Patch
+    {
+        [HarmonyPrefix]
+        public static bool Prefix(SuperMachineNut __instance)
+        {
+            if (!Input.GetKey(KeyCode.LeftAlt)) return true;
+            int col = __instance.thePlantColumn;
+            int row = __instance.thePlantRow;
+            var cellPlants = Lawnf.Get1x1Plants(col, row);
+            if (cellPlants == null) return true;
+            bool hasNutPot = false;
+            Plant pot = null;
+            for (int i = 0; i < cellPlants.Count; i++)
+            {
+                Plant p = cellPlants[i];
+                if (p == null) continue;
+                if (p.thePlantType == PlantType.NutPot) hasNutPot = true;
+                if (pot == null && (p.thePlantType == PlantType.Pot || p.thePlantType == PlantType.GoldPot)) pot = p;
+            }
+            if (!hasNutPot && pot != null)
+            {
+                if (CreatePlant.Instance.SetPlant(pot.thePlantColumn, pot.thePlantRow, PlantType.NutPot, null, Vector2.zero, true, true) != null)
+                {
+                    CreateItem.Instance.SetCoin(pot.thePlantColumn, pot.thePlantRow, 0, 0);
+                    pot.Die(0);
+                    Core.UpdateSunAndCooldowns();
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

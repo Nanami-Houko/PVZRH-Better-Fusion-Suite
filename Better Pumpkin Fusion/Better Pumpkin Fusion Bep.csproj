@@ -1,17 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <RootNamespace>Better_Pot_Fusion_Bep</RootNamespace>
+    <RootNamespace>Better_Pumpkin_Fusion_Bep</RootNamespace>
     <FileVersion>3.0.1</FileVersion>
     <GamePath>G:\Fusion 3.0.1 Bep</GamePath>
+    <Configurations>BepInEx</Configurations>
   </PropertyGroup>
-  
+
   <PropertyGroup>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='BepInEx|AnyCPU'">
+    <DefineConstants>$(DefineConstants);BEPINEX</DefineConstants>
+    <IsPublishable>False</IsPublishable>
+    <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <ItemGroup>

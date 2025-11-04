@@ -7,32 +7,32 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Better Pumpkin Fusion", "Be
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Better Pot Fusion", "Better Pot Fusion\Better Pot Fusion.csproj", "{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Better Pot Fusion Bep", "Better Pot Fusion Bep\Better Pot Fusion Bep.csproj", "{07EFA6CD-943D-4249-B85D-DBAD02FEBD26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Better Pot Fusion Bep", "Better Pot Fusion\Better Pot Fusion Bep.csproj", "{07EFA6CD-943D-4249-B85D-DBAD02FEBD26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Better Pumpkin Fusion Bep", "Better Pumpkin Fusion Bep\Better Pumpkin Fusion Bep.csproj", "{F81D7CD7-4DC6-4D9A-B266-288CE3C0F11B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Better Pumpkin Fusion Bep", "Better Pumpkin Fusion\Better Pumpkin Fusion Bep.csproj", "{F81D7CD7-4DC6-4D9A-B266-288CE3C0F11B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		BepInEx|Any CPU = BepInEx|Any CPU
+		Melon|Any CPU = Melon|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{688A95ED-F26D-4862-B56C-DEF07CD65745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{688A95ED-F26D-4862-B56C-DEF07CD65745}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{688A95ED-F26D-4862-B56C-DEF07CD65745}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{688A95ED-F26D-4862-B56C-DEF07CD65745}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07EFA6CD-943D-4249-B85D-DBAD02FEBD26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07EFA6CD-943D-4249-B85D-DBAD02FEBD26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07EFA6CD-943D-4249-B85D-DBAD02FEBD26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07EFA6CD-943D-4249-B85D-DBAD02FEBD26}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F81D7CD7-4DC6-4D9A-B266-288CE3C0F11B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F81D7CD7-4DC6-4D9A-B266-288CE3C0F11B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F81D7CD7-4DC6-4D9A-B266-288CE3C0F11B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F81D7CD7-4DC6-4D9A-B266-288CE3C0F11B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{688A95ED-F26D-4862-B56C-DEF07CD65745}.BepInEx|Any CPU.ActiveCfg = Melon|Any CPU
+		{688A95ED-F26D-4862-B56C-DEF07CD65745}.BepInEx|Any CPU.Build.0 = Melon|Any CPU
+		{688A95ED-F26D-4862-B56C-DEF07CD65745}.Melon|Any CPU.ActiveCfg = Melon|Any CPU
+		{688A95ED-F26D-4862-B56C-DEF07CD65745}.Melon|Any CPU.Build.0 = Melon|Any CPU
+		{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}.BepInEx|Any CPU.ActiveCfg = Melon|Any CPU
+		{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}.BepInEx|Any CPU.Build.0 = Melon|Any CPU
+		{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}.Melon|Any CPU.ActiveCfg = Melon|Any CPU
+		{6E83000C-0B1B-4E84-976A-4A226A1A4A7F}.Melon|Any CPU.Build.0 = Melon|Any CPU
+		{07EFA6CD-943D-4249-B85D-DBAD02FEBD26}.BepInEx|Any CPU.ActiveCfg = BepInEx|Any CPU
+		{07EFA6CD-943D-4249-B85D-DBAD02FEBD26}.BepInEx|Any CPU.Build.0 = BepInEx|Any CPU
+		{07EFA6CD-943D-4249-B85D-DBAD02FEBD26}.Melon|Any CPU.ActiveCfg = BepInEx|Any CPU
+		{07EFA6CD-943D-4249-B85D-DBAD02FEBD26}.Melon|Any CPU.Build.0 = BepInEx|Any CPU
+		{F81D7CD7-4DC6-4D9A-B266-288CE3C0F11B}.BepInEx|Any CPU.ActiveCfg = BepInEx|Any CPU
+		{F81D7CD7-4DC6-4D9A-B266-288CE3C0F11B}.BepInEx|Any CPU.Build.0 = BepInEx|Any CPU
+		{F81D7CD7-4DC6-4D9A-B266-288CE3C0F11B}.Melon|Any CPU.ActiveCfg = BepInEx|Any CPU
+		{F81D7CD7-4DC6-4D9A-B266-288CE3C0F11B}.Melon|Any CPU.Build.0 = BepInEx|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

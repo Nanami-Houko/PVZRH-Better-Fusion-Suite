@@ -1,14 +1,30 @@
-﻿using HarmonyLib;
+﻿#if MELON
 using Il2Cpp;
 using MelonLoader;
+#elif BEPINEX
+using BepInEx;
+using BepInEx.Preloader.Core.Patching;
+using BepInEx.Unity.IL2CPP;
+#endif
+using HarmonyLib;
 using UnityEngine;
 
+#if MELON
 [assembly: MelonInfo(typeof(Better_Pumpkin_Fusion.Core), "Better Pumpkin Fusion", "3.0.1", "dynaslash, JustNull, Mamoru-kun & Dakosha", null)]
 [assembly: MelonGame("LanPiaoPiao", "PlantsVsZombiesRH")]
+#endif
 
 namespace Better_Pumpkin_Fusion
 {
+#if BEPINEX
+    [PatcherPluginInfo("Better_Pumpkin_Fusion", "Better Pumpkin Fusion", "3.0.1")]
+    [BepInProcess("PlantsVsZombiesRH.exe")]
+#endif
+#if MELON
     public class Core : MelonMod
+#elif BEPINEX        
+    public class Core : BasePlugin
+#endif
     {
         private static Dictionary<PlantType, PlantType> plantMixDictionary = new Dictionary<PlantType, PlantType>
         {
@@ -27,7 +43,11 @@ namespace Better_Pumpkin_Fusion
             { PlantType.Peashooter, PlantType.PeaPumpkin },
         };
 
-        public override void OnInitializeMelon() => MelonLogger.Msg("Better Pumpkin Fusion is loaded!");
+#if MELON
+        public override void OnInitializeMelon() => MelonLogger.Msg("Better Pot Fusion is loaded!");
+#elif BEPINEX
+        public override void Load() => Log.LogDebug("Better Pot Fusion is loaded!");
+#endif
 
         [HarmonyPatch(typeof(SuperMachineNut), nameof(SuperMachineNut.Summon))]
         public static class SuperMachineNut_Patch

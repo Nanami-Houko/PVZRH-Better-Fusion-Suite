@@ -13,7 +13,14 @@
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
     <GamePath>G:\Fusion 3.0.1</GamePath>
+    <Configurations>Melon</Configurations>
 	</PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Melon|AnyCPU'">
+    <DefineConstants>$(DefineConstants);MELON</DefineConstants>
+    <IsPublishable>False</IsPublishable>
+    <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+  </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="Assembly-CSharp">

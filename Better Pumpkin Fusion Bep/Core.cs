@@ -1,14 +1,14 @@
-﻿using HarmonyLib;
-using Il2Cpp;
-using MelonLoader;
+﻿using BepInEx;
+using BepInEx.Preloader.Core.Patching;
+using BepInEx.Unity.IL2CPP;
+using HarmonyLib;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(Better_Pumpkin_Fusion.Core), "Better Pumpkin Fusion", "3.0.1", "dynaslash, JustNull, Mamoru-kun & Dakosha", null)]
-[assembly: MelonGame("LanPiaoPiao", "PlantsVsZombiesRH")]
-
-namespace Better_Pumpkin_Fusion
+namespace Better_Pumpkin_Fusion_Bep
 {
-    public class Core : MelonMod
+    [PatcherPluginInfo("Better_Pumpkin_Fusion_Bep", "Better Pumpkin Fusion", "3.0.1")]
+    [BepInProcess("PlantsVsZombiesRH.exe")]
+    public class Core : BasePlugin
     {
         private static Dictionary<PlantType, PlantType> plantMixDictionary = new Dictionary<PlantType, PlantType>
         {
@@ -27,7 +27,7 @@ namespace Better_Pumpkin_Fusion
             { PlantType.Peashooter, PlantType.PeaPumpkin },
         };
 
-        public override void OnInitializeMelon() => MelonLogger.Msg("Better Pumpkin Fusion is loaded!");
+        public override void Load() => Log.LogInfo("Better Pumpkin Fusion is loaded!");
 
         [HarmonyPatch(typeof(SuperMachineNut), nameof(SuperMachineNut.Summon))]
         public static class SuperMachineNut_Patch

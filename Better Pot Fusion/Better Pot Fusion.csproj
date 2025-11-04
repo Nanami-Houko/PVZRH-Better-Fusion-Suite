@@ -6,17 +6,13 @@
 		<RootNamespace>Better_Pot_Fusion</RootNamespace>
 		<LangVersion>default</LangVersion>
 		<IsPackable>false</IsPackable>
-		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<FileVersion>1.0.0.0</FileVersion>
+		<AssemblyVersion>3.0.1</AssemblyVersion>
+		<FileVersion>3.0.1</FileVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<AssemblyName>Better_Pot_Fusion</AssemblyName>
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
-<<<<<<< HEAD
-    <GamePath>G:\Fusion 2.8.1</GamePath>
-=======
-    <GamePath>D:\Pvz Alt\PvZ Fusion Multi-lang by Blooms\Game Files</GamePath>
->>>>>>> 46caff2b7ca0133ec799b700aa3851ebab5acf3e
+    <GamePath>G:\Fusion 3.0.1</GamePath>
 	</PropertyGroup>
 
   <ItemGroup>

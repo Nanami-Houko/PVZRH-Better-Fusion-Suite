@@ -6,13 +6,13 @@
 		<RootNamespace>Better_Pumpkin_Fusion</RootNamespace>
 		<LangVersion>default</LangVersion>
 		<IsPackable>false</IsPackable>
-		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<FileVersion>1.0.0.0</FileVersion>
+		<AssemblyVersion>3.0.1</AssemblyVersion>
+		<FileVersion>3.0.1</FileVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<AssemblyName>Better_Pumpkin_Fusion</AssemblyName>
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
-    <GamePath>G:\Fusion 2.8.1</GamePath>
+    <GamePath>G:\Fusion 3.0.1</GamePath>
 	</PropertyGroup>
 
 	<ItemGroup>
